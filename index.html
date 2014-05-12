@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" href="img/icon.png">
+	<title>DAWODI GROUP</title>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css">
+	<link type="text/css" rel="stylesheet" media="all" href="css/style.css">
+	<link type="text/css" rel="stylesheet" media="all" href="css/slider.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwyWnLVp8pvMTyufKayOjGZFsFCtW-Pek&sensor=false"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
+	<script type="text/javascript" src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+	<script type="text/javascript" src="js/jquery.finger.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/markerclusterer.js"></script>
+</head>
+
+<body>
+	<div id="map">
+		<figure></figure>
+	</div>
+	<article>
+		<h1></h1>
+		<h2></h2>
+	</article>
+	<div id="zoom">
+		<button class="icon" id="icon-zoomin" name="in"></button>
+		<button class="icon" id="icon-zoomout" name="out"></button>
+	</div>
+	<footer>
+		<div id="logo"></div>
+		<div id="menu">
+			<ul>
+				<li><a id="home" class="checked">Dawodi</a>
+				</li>
+				<li>
+					<a id="about"></a>
+				</li>
+				<li>
+					<a id="client"></a>
+				</li>
+				<li>
+					<a id="events"></a>
+				</li>
+				<li>
+					<a id="order"></a>
+				</li>
+				<li>
+					<a id="contact"></a>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<div class="content" id="about-content">
+				<div id="about-text"></div>
+			</div>
+			<div class="content" id="client-content">
+				<div id="client-text"></div>
+			</div>
+			<div class="content" id="events-content">
+				<div id="slider">
+					<div id="holder"></div>
+				</div>
+				<nav class="slider-nav"></nav>
+			</div>
+			<div class="content" id="order-content">
+				<script type="text/javascript">
+					var submitted = false;
+				</script>
+				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload=""></iframe>
+				<form action="https://docs.google.com/forms/d/1N629FPePRPcsffqAre9_mUR4jbcxRuBVwSnD_7c7jjA/formResponse" id="form" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+					<div class="field">
+						<input placeholder="Your name" type="text" name="entry.749536427" id="entry_749536427" required=""><span class="icon" id="user-icon"></span>
+					</div>
+					<div class="field">
+						<input placeholder="Contact email" type="email" name="entry.364813194" id="entry_364813194" required=""><span class="icon" id="email-icon"></span>
+					</div>
+					<div class="field">
+						<textarea placeholder="Your order" name="entry.738438790" id="entry_738438790" required=""></textarea><span class="icon" id="order-icon"></span>
+					</div>
+					<input id="submit" type="submit" value="Send" class="send" form="form" name="submit">
+					<div id="clear">
+						<button class="icon" id="clear-icon"></button>
+					</div>
+				</form>
+				</div>
+				<div class="content" id="contact-content">
+					<div id="contact-image"></div>
+					<div id="contact-text"></div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="footer" id="about-footer">Site design by <a href="#" target="_blank">Sama Kanbour</a>
+				</div>
+				<div class="footer" id="client-footer"></div>
+				<div class="footer" id="contact-footer">
+					<div id="contact-info">
+						<p><span>Call us Sat through Thu · 9:00 am - 3:00 pm · Baghdad Local Time</span>
+						</p>
+					</div>
+					<div id="contact-map"><a href="https://www.google.com/maps/@33.3047208,44.3714453,15z" target="_blank">Locate DAWODI on Google Maps<div id="map-marker"></div></a>
+					</div>
+				</div>
+			</div>
+	</footer>
+</body>
+
+</html>
