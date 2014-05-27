@@ -9,7 +9,7 @@ function init(result) {
 	google.maps.event.addDomListener(window, 'load', initMap);
 	function initMap() {
 		var zoom = 2;
-		var latitude = 18.0000;
+		var latitude = 20.0000;
 		if ($(window).width() < 700) {
 			zoom = 1;
 			latitude = -35.0000;
@@ -17,7 +17,7 @@ function init(result) {
 		var styles = [{featureType:"administrative",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"transit",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"landscape",elementType:"all",stylers:[{hue:"#727D82"},{lightness:-30},{saturation:-80}]},{featureType:"water",elementType:"all",stylers:[{visibility:"simplified"},{hue:"#F3F4F4"},{lightness:80},{saturation:-80}]}];
 		var mapOptions = {
 			zoom: zoom,
-			center: new google.maps.LatLng(latitude, 60.0000),
+			center: new google.maps.LatLng(latitude, 10.0000),
 			styles: styles
 		};
 		var map = new google.maps.Map($('figure')[0], mapOptions);
@@ -70,7 +70,7 @@ function initData(result, map) {
 				icon: icon,
 				position: new google.maps.LatLng(row.location.split(',')[0], row.location.split(',')[1]),
 				title: row.title });
-		google.maps.event.addListener(marker, 'click', function() { zoom(map, 8, this.getPosition()); });
+		google.maps.event.addListener(marker, 'click', function() { zoom(map, 5, this.getPosition()); });
 		keys[row.city] = marker;
 		markers.push(marker);
 	});
@@ -127,16 +127,13 @@ function initData(result, map) {
 	};
 	slider.init();
 	$(".slide").bind("flick", function(event) {
-		if (event.direction == -1) {
-			id++;
-		} else {
-			id--;
-		}
-		if (id >= 0) {
-			$("#nav-" + id).click();
-		}
+		$("#slider").animate({ scrollLeft: $("#slider")[0].scrollLeft - event.dx * 3 }, 800);
+		setTimeout(function(){
+			var id = Math.round($("#slider")[0].scrollLeft / 300);
+			$(".slider-nav a").removeClass("active");
+			$("#nav-" + id).addClass("active");
+		}, 800);
 		event.preventDefault();
-		return false;
 	});
 	$(".slide").bind("tap", function(event) {
 		$('.slide p').css({ "display" : "none" });
@@ -148,7 +145,7 @@ function initData(result, map) {
 			$(this).css({ "background-image" : "none" });
 			$($(this).children()[1]).fadeIn();
 			var name = $(this).children()[0].textContent;
-			zoom(map, 8, keys[name].getPosition());
+			zoom(map, 5, keys[name].getPosition());
 		} else {
 			$('.slide').removeClass("clicked");
 			img = '';

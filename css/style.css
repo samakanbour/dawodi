@@ -18,6 +18,7 @@ html, body {
 }
 figure {
 	height: 100%;
+    width: 80%;
     left: 20%;
 }
 #icon-zoomin {
